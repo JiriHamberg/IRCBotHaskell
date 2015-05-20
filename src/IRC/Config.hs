@@ -1,8 +1,4 @@
-module IrcConfig where
-
-import Network
-import System.IO
-import Text.Printf
+module IRC.Config where
  
 server = "irc.cc.tut.fi"
 port   = 6667
