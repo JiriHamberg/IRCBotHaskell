@@ -1,4 +1,4 @@
-module IrcMain where
+module Main where
 
 import Control.Concurrent.Chan
 import Control.Monad.State
@@ -8,11 +8,8 @@ import IRC.IO
 import IRC.PluginController
 
 
-main :: IO()
+main :: IO ()
 main = do
 	connection <- connectIRC
 	runController connection
-	-- connection <- connectIRC
-	-- mapM (registerPlugin connection) plugins
-	-- forever $ yield
-	
+		

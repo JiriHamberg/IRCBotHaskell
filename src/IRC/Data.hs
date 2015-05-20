@@ -59,7 +59,6 @@ msgParser = do
 	command <- commandField 
 	params <- optionMaybe whitespace >> paramsParser
 	optionMaybe whitespace
-	--char '\n'
 	return $ Msg prefix command params
 
 whitespace = do
@@ -74,7 +73,7 @@ commandField = do
 
 textField = do
 	first <- noneOf " \n\r"
-	rest <- many $ noneOf " :\n\r"
+	rest <- many $ noneOf " \n\r"
 	return $ first : rest
 
 prefixParser = do
